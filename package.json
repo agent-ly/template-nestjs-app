@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node dist/main",
+    "build:clean": "rm -rf dist",
+    "build:compile": "swc src -d dist",
+    "build": "pnpm build:clean && pnpm build:compile",
+    "dev:build": "swc src -wqd dist",
+    "dev:start": "nodemon -q -C dist/main",
+    "dev": "pnpm \"/^dev:.*/\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "@nestjs/core": "^9.4.0",
+    "@nestjs/platform-express": "^9.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.49",
+    "@swc/helpers": "^0.5.0",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
